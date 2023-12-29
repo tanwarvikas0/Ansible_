@@ -1,0 +1,14 @@
+create all these virtual machines
+without my computer crashing. So, I have used AWS for all the virtual
+machines I have created.
+
+1.Ansible_node
+2.node1
+3.node2     #give all the machine all trafice access for batter lab
+4.node4
+5.node5
+
+###############Installing Ansible#####################################################
+Ansible relies on SSH and Python to do all the automation magic and so you only
+need to install Ansible on the control node and make sure that OpenSSH and
+Python is installed on both the control and the managed nodes.
