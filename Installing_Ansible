@@ -1,0 +1,26 @@
+#######Installing Ansible#######################
+yum install -y ansible
+ apt-get -y install ansible ( for ubuntu )
+1. Create a new user on all hosts.
+2. Grant sudo privileges to the new user on all nodes.
+3. Generate SSH keys for the new user on the control node.
+4. Copy the SSH public key to the managed nodes.
+
+[root@control ~]# useradd -m  vikas
+[root@node1 ~]# useradd -m vikas
+[root@node2 ~]# useradd -m vikas
+[root@node3 ~]# useradd -m vikas
+[root@node4 ~]# useradd -m vikas
+
+[root@control ~]# echo "vikas ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+[root@node1 ~]# echo "vikas ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+[root@node2 ~]# echo "vikas ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+[root@node3 ~]# echo "vikas ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+[root@node4 ~]# echo "vikas ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+##############create the ssh key and add the remote host###################
+$ ssh-keygen
+$ ssh-copy-id node1
+$ ssh-copy-id node2
+$ ssh-copy-id node3
+$ ssh-copy-id node4
+
