@@ -1,0 +1,29 @@
+An Ansible inventory file is a basically a file that contains a list of servers, group
+of servers, or ip addresses that references that hosts
+
+The /etc/ansible/hosts is the default inventory file
+
+# mkdir /home/vikas/plays
+
+# cat myhosts
+node1
+node2
+node3
+node4
+list all your hosts in the myhosts
+inventory file:
+
+]$ ansible all -i myhosts --list-hosts
+
+-i option was used to specify the myhosts inventory file. If you omit the -i option, Ansible will look for hosts in the /etc/ansible/hosts
+
+/etc/hosts,   ## add the hostname in the file of /etc/hosts
+
+################    We can also add these node in the groups like this ###########
+$ cat myhosts
+[test]
+node1
+node2
+[prod]
+node3
+node4
