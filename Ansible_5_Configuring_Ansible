@@ -1,0 +1,37 @@
+/etc/ansible/ansible.cfg is the default configuration file.
+
+$ ansible --version
+
+two most important sections that you need to define in your Ansible  file are:
+1. [defaults]
+2. [privilege_escalation]
+
+[defaults] section, here are the most important settings you need to be aware
+of:
+• inventory → specifies the path of your inventory file.
+• remote_user → specifies the user who will connect to the managed hosts
+and run the playbooks.
+forks → specifies the number of host that ansible can manage/process in
+parallel; default is 5.
+• host_key_checking → specifies whether you want to turn on/off SSH key
+host checking; default is True.
+In the [privilege_escalation] section, you can configure the following settings:
+• become → specify where to allow/disallow privilege escalation; default is
+False.
+• become_method → specify the privilege escalation method; default is sudo.
+• become_user → specify the user you become through privilege escalation;
+default is root.
+• become_ask_pass → specify whether to ask or not ask for privilege password; default is False.
+
+#############creating own ansible.cfg######################
+
+[defailts]
+inventory = myhosts
+remote_user =vikas
+host_key_checking = false
+[privilege_escalation]
+become = true
+become_method = sudo
+become_user = root
+become_ack_pass = false
+
